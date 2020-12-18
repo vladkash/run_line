@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
 
         \App\User::create([
             'name' => 'admin',
-            'email' => 'admin@admin.com',
             'password' => \Illuminate\Support\Facades\Hash::make('12PasS34')
         ]);
     }
