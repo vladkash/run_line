@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return redirect('/login');
 });
@@ -18,3 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/lines', 'LineController@store')->name('lines.store');
+Route::get('/lines{lineId}/active', 'LineController@makeActive')->name('lines.make_active');
+Route::get('/lines{lineId}/delete', 'LineController@delete')->name('lines.delete');
